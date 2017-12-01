@@ -1,0 +1,32 @@
+#pic1{
+    background-color: red;
+}
+
+#pic2{
+    background-color: blue;
+}
+
+#pic3{
+    background-color: yellow;
+}
+
+#pic4{
+    background-color: green;
+}
+
+#pic5{
+    background-color: orange;
+}
+
+#pic6{
+    background-color: purple;
+}
+
+.col-md-4{
+    height:300px;
+}
+
+img{
+    max-width:95%;
+    max-height:95%;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Gallery Of My Life</title>
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src='vendors/angular.js'></script>
+    <script src='scripts/client.js'></script>
+</head>
+
+<body ng-app='galleryApp' ng-controller='galleryController as vm'>
+    <H1>The Gallery Of My Life</H1>
+    <p>vm.message: {{vm.message}}</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4" ng-repeat="puppy in vm.gallery">
+                <!-- <h1>{{puppy.name}}</h1> -->
+                <img src="{{puppy.pic}}" />
+                </br>
+                <button type="button" class="btn btn-default ">Love it!</button>
+                <p>Placeholder: x has loved this!</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<!-- <div class="container">
+        <div class="row">
+            <div ng-repeat="puppy in vm.gallery" class="col-md-4">
+                <h1>{{puppy.name}}</h1>
+                <button type="button" class="btn btn-default ">Like</button>
+            </div>
+        </div>
+    </div> --!>
+</body>
+</html>
