@@ -19,12 +19,17 @@
             <div class="col-md-4" ng-repeat="aboutMe in vm.gallery">
                 <div class="imgDiv">
                     <h4>{{aboutMe.name}}</h4>
-                    <img class="img-responsive" ng-src="{{aboutMe.pic}}" ng-show="!isHidden" ng-click="isHidden = !isHidden"></img>
+                    <img class="img-responsive" ng-src="{{aboutMe.pic}}" ng-show="!isHidden" ng-click="isHidden = !isHidden" style="max-height:300px"></img>
                     <div class="description" ng-show="isHidden" ng-click="isHidden = !isHidden">
-                        {{aboutMe.description}}</div>
+                        <h3>{{aboutMe.description}}</h3>
+                    </div>
+                    <button type=" button " class="btn btn-default " ng-click="count = count + 1" ng-init="count=0">Love it!</button>
+                    <span>
+                        count: {{count}}
+                    </span>
                 </div>
             </div>
-            <button type=" button " class="btn btn-default ">Love it!</button>
+
             <!-- <p>Placeholder: x has loved this!</p> -->
             {{tab}}
         </div>

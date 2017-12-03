@@ -21,10 +21,10 @@ app.controller('galleryController', ['$http', function ($http) {
 var aboutMe = [
     { name: 'Family                                                                                                                                                                                                                                                                           ', 
     pic: '/img/human-family.png',
-    description: 'Filler'},
+    description: 'My grandfather, also named Guillermo Olivos, showed me the monastery in Lima where he used to sneak into as a boy to study religion and medicine. As the first-born son of the first-born American son of an immigrant from Peru, I try to never forget my roots.'},
 
-    { name: 'Keller', 
-    pic: '/img/meandkeller.png',
+    { name: 'The Girls', 
+    pic: '/img/dog-family.png',
     description: 'Filler'},
 
     { name: 'Exercise', 
