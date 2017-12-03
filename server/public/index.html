@@ -10,43 +10,68 @@
     <link rel="stylesheet" href="styles/style.css">
     <script src='vendors/angular.js'></script>
     <script src='scripts/client.js'></script>
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+    </style>
 </head>
 
 <body ng-app='galleryApp' ng-controller='galleryController as vm'>
-    <H1>The Gallery Of My Life</H1>
-    <div class="container">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="mailto:gcolivos@gmail.com">Contact Me</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>Gallery</h1>
+        </div>
+    </div>
+
+    <div class="container-fluid underJumbo">
         <div class="row">
             <div class="col-md-4" ng-repeat="aboutMe in vm.gallery">
-                <div class="imgDiv">
-                    <h4>{{aboutMe.name}}</h4>
-                    <img class="img-responsive" ng-src="{{aboutMe.pic}}" ng-show="!isHidden" ng-click="isHidden = !isHidden" style="max-height:300px"></img>
+                <div class="imgDiv text-center" ng-init="viewCount=0">
+                    <h1 style="font-weight: bold">{{aboutMe.name}}</h1>
+                    <img class="img-responsive center-block" ng-src="{{aboutMe.pic}}" ng-show="!isHidden" ng-click="isHidden = !isHidden; viewCount = viewCount + 1" style="max-height:250px"></img>
                     <div class="description" ng-show="isHidden" ng-click="isHidden = !isHidden">
-                        <h3>{{aboutMe.description}}</h3>
+                        <h3 style="font-weight: italics">{{aboutMe.description1}}</h3>
+                        <h3 style="font-weight: italics">{{aboutMe.description2}}</h3>
                     </div>
-                    <button type=" button " class="btn btn-default " ng-click="count = count + 1" ng-init="count=0">Love it!</button>
-                    <span ng-show="count"> {{count}} people love this!</span>
-                    <span ng-show="!count">No people love this :(</span>
+                    <button type=" button " class="btn btn-danger " ng-click="count = count + 1" ng-init="count=0">
+                        <span class="glyphicon glyphicon-heart"></span>
+                    </button>
+                    <span ng-show="count>1"> {{count}} people love this!</span>
+                    <span ng-show="count===1"> {{count}} person loves this!</span>
+                    <span ng-show="!count">No people love this :(</span></br>
+                    <span ng-show="viewCount>1">{{viewCount}} people have clicked on this!</span>
+                    <span ng-show="viewCount===1">{{viewCount}} person has clicked on this!</span>
+                    <span ng-show="viewCount===0">No one has clicked on this :(</span>
                 </div>
             </div>
-
-            <!-- <p>Placeholder: x has loved this!</p> -->
-            {{tab}}
         </div>
-    </div>
-
     </div>
 </body>
 
-</html>
-
-
-<!-- <div class="container ">
-        <div class="row ">
-            <div ng-repeat="puppy in vm.gallery " class="col-md-4 ">
-                <h1>{{puppy.name}}</h1>
-                <button type="button " class="btn btn-default ">Like</button>
-            </div>
-        </div>
-    </div> --!>
-</body>
 </html>
