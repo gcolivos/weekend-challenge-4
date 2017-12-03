@@ -24,9 +24,13 @@
 
 .col-md-4{
     height:300px;
+    margin-top: 100px;
 }
 
 img{
-    max-width:95%;
-    max-height:95%;
+    max-width:100%;
+    max-height:100%;
+    overflow: hidden;
+    object-position: center;
+    border: 10px;
 }
