@@ -24,9 +24,8 @@
                         <h3>{{aboutMe.description}}</h3>
                     </div>
                     <button type=" button " class="btn btn-default " ng-click="count = count + 1" ng-init="count=0">Love it!</button>
-                    <span>
-                        count: {{count}}
-                    </span>
+                    <span ng-show="count"> {{count}} people love this!</span>
+                    <span ng-show="!count">No people love this :(</span>
                 </div>
             </div>
 
